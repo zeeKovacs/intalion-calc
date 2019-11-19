@@ -1,0 +1,14 @@
+Step by step:
+
+Creating a dynamic web project in Eclipse.
+
+Specifying package while creating an interface and a class for operations and their implementation.
+
+Creating web service from Calculator class and setting up Tomcat server.
+
+Creating a SoapUI project from the created .wsdl file.
+
+Creating a Suite and then creating specific test cases for addition and division.
+
+Checking response code for validness and invalidness.
+

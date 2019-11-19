@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="1f5dc777-1457-4466-a7bb-6934d5797a20" activeEnvironment="Default" name="intalion-calc" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="3e9ca8e1-2565-486b-8a4e-02dee8f0599c" wsaVersion="NONE" name="CalculatorSoapBinding" type="wsdl" bindingName="{http://com.intalion}CalculatorSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/home/zolee/eclipse-workspace/intalion-calc/WebContent/wsdl/Calculator.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/zolee/eclipse-workspace/intalion-calc/WebContent/wsdl/Calculator.wsdl"><con:part><con:url>file:/home/zolee/eclipse-workspace/intalion-calc/WebContent/wsdl/Calculator.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://com.intalion" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://com.intalion" xmlns:intf="http://com.intalion" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+  <wsdl:types>
+    <schema elementFormDefault="qualified" targetNamespace="http://com.intalion" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="addition">
+        <complexType>
+          <sequence>
+            <element name="a" type="xsd:double"/>
+            <element name="b" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="additionResponse">
+        <complexType>
+          <sequence>
+            <element name="additionReturn" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="substraction">
+        <complexType>
+          <sequence>
+            <element name="a" type="xsd:double"/>
+            <element name="b" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="substractionResponse">
+        <complexType>
+          <sequence>
+            <element name="substractionReturn" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="multiplication">
+        <complexType>
+          <sequence>
+            <element name="a" type="xsd:double"/>
+            <element name="b" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="multiplicationResponse">
+        <complexType>
+          <sequence>
+            <element name="multiplicationReturn" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="dividation">
+        <complexType>
+          <sequence>
+            <element name="a" type="xsd:double"/>
+            <element name="b" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="dividationResponse">
+        <complexType>
+          <sequence>
+            <element name="dividationReturn" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="additionRequest">
+    <wsdl:part element="impl:addition" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="additionResponse">
+    <wsdl:part element="impl:additionResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dividationResponse">
+    <wsdl:part element="impl:dividationResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="substractionResponse">
+    <wsdl:part element="impl:substractionResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="multiplicationRequest">
+    <wsdl:part element="impl:multiplication" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="multiplicationResponse">
+    <wsdl:part element="impl:multiplicationResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dividationRequest">
+    <wsdl:part element="impl:dividation" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="substractionRequest">
+    <wsdl:part element="impl:substraction" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Calculator">
+    <wsdl:operation name="addition">
+      <wsdl:input message="impl:additionRequest" name="additionRequest"></wsdl:input>
+      <wsdl:output message="impl:additionResponse" name="additionResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="substraction">
+      <wsdl:input message="impl:substractionRequest" name="substractionRequest"></wsdl:input>
+      <wsdl:output message="impl:substractionResponse" name="substractionResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="multiplication">
+      <wsdl:input message="impl:multiplicationRequest" name="multiplicationRequest"></wsdl:input>
+      <wsdl:output message="impl:multiplicationResponse" name="multiplicationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dividation">
+      <wsdl:input message="impl:dividationRequest" name="dividationRequest"></wsdl:input>
+      <wsdl:output message="impl:dividationResponse" name="dividationResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculatorSoapBinding" type="impl:Calculator">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addition">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="additionRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="additionResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="substraction">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="substractionRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="substractionResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="multiplication">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="multiplicationRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="multiplicationResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dividation">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="dividationRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="dividationResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculatorService">
+    <wsdl:port binding="impl:CalculatorSoapBinding" name="Calculator">
+      <wsdlsoap:address location="http://localhost:8080/intalion-calc/services/Calculator"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/intalion-calc/services/Calculator</con:endpoint></con:endpoints><con:operation id="8f68dac0-33f4-4a87-9f5e-352bb6245980" isOneWay="false" action="" name="addition" bindingOperationName="addition" type="Request-Response" outputName="additionResponse" inputName="additionRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7e84e7da-d45d-4e9a-87a6-66089bbd16d1" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/intalion-calc/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com.intalion">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:addition>
+         <com:a>10</com:a>
+         <com:b>20</com:b>
+      </com:addition>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://com.intalion/Calculator/additionRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ec823244-a9f4-4506-bfe3-68cf337551ec" isOneWay="false" action="" name="dividation" bindingOperationName="dividation" type="Request-Response" outputName="dividationResponse" inputName="dividationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="261f57e7-e044-4ebd-9282-c3ca3a6ec7a7" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/intalion-calc/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com.intalion">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:dividation>
+         <com:a>10</com:a>
+         <com:b>0</com:b>
+      </com:dividation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://com.intalion/Calculator/dividationRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="3d295f7a-c7b6-4ab6-83d4-09c17f683705" isOneWay="false" action="" name="multiplication" bindingOperationName="multiplication" type="Request-Response" outputName="multiplicationResponse" inputName="multiplicationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8c9f167a-dfc0-45f5-987f-021512b2622c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/intalion-calc/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com.intalion">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:multiplication>
+         <com:a>?</com:a>
+         <com:b>?</com:b>
+      </com:multiplication>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://com.intalion/Calculator/multiplicationRequest"/></con:call></con:operation><con:operation id="24c75bb0-52d1-4982-a034-05bbee21ef1c" isOneWay="false" action="" name="substraction" bindingOperationName="substraction" type="Request-Response" outputName="substractionResponse" inputName="substractionRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c290731a-d704-4321-ae12-c7e52d706c7e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/intalion-calc/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com.intalion">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:substraction>
+         <com:a>?</com:a>
+         <com:b>?</com:b>
+      </com:substraction>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://com.intalion/Calculator/substractionRequest"/></con:call></con:operation></con:interface><con:testSuite id="41c43796-67ea-468a-bc17-958988c0062b" name="CalcTests"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="7d887a2f-9649-4bcd-8130-54f14b2fa06e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AdditionTestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="79cfb361-8d45-4c5a-8e10-a2aedcb78a45" name="addition - simple"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>addition</con:operation><con:request name="addition - simple" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="e7dc300d-f88a-4cfa-b6a9-520edb8bc0aa"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/intalion-calc/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com.intalion">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:addition>
+         <com:a>10</com:a>
+         <com:b>20</com:b>
+      </com:addition>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="8ffd8c12-8bc1-430d-ab17-ec5246c3d1c8" name="SOAP Response"/><con:assertion type="Valid HTTP Status Codes" id="06af1aac-f598-49a6-8204-895347b23abf" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://com.intalion/Calculator/additionRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="40262eac-e4be-40e3-b08e-4c99f150f91d" name="dividation - by zero"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>dividation</con:operation><con:request name="dividation - by zero" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="9f88fe78-e8c2-4d02-b893-edaa1b88602f"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/intalion-calc/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com.intalion">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:dividation>
+         <com:a>10</com:a>
+         <com:b>0</com:b>
+      </com:dividation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="67c4e7ee-e0d8-49b5-8b64-2cf366ee1f2f" name="SOAP Response"/><con:assertion type="Invalid HTTP Status Codes" id="f6d6ffa8-6a31-4e4d-ad17-3afed51df853" name="Invalid HTTP Status Codes"><con:configuration><codes>404</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://com.intalion/Calculator/dividationRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
